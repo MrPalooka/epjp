@@ -1,51 +1,48 @@
 package s066bis;
 
-
-
 public class Main {
 
-    public static void main(String[] args) {
+	public static void main(String[] args) {
 
-        Vehicle[] vehicles = new Vehicle[3];
+		Vehicle[] vehicles = new Vehicle[3];
 
-        vehicles[0] = new Car();
+		vehicles[0] = new Car();
 
-        vehicles[1] = new Bus();
+		vehicles[1] = new Bus();
 
-        vehicles[2] = new MotorBike();
+		vehicles[2] = new MotorBike();
 
-        
+		boolean rightDirection = true;
 
-        boolean rightDirection = true;
+		for (Vehicle vehicle : vehicles) {
 
-        for(Vehicle vehicle : vehicles) {
+			vehicle.steer(rightDirection);
 
-            vehicle.steer(rightDirection);
+			rightDirection = !rightDirection;
 
-            rightDirection = !rightDirection;
+		}
 
-        }
+		Conditioning[] conditionings = new Conditioning[2];
 
-        
+		conditionings[0] = new Bus();
 
-        Conditioning[] conditionings = new Conditioning[2];
+		conditionings[1] = new Car();
 
-        conditionings[0] = new Bus();
+		int temperature = 20;
 
-        conditionings[1] = new Car();
+		for (Conditioning conditioning : conditionings) {
+			if (conditioning instanceof Car) {
+				System.out.println("This is a car -> ");
+				Car car = (Car) conditioning;
+				car.steer(true);
+			} else {
+				System.out.println("This is not a car");
+			}
+			conditioning.setTemperature(temperature);
 
-        
+			temperature += 1;
 
-        int temperature = 20;
-
-        for(Conditioning conditioning : conditionings) {
-
-            conditioning.setTemperature(temperature);
-
-            temperature += 1;
-
-        }
-
-    }
+		}
+	}
 
 }

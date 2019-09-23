@@ -4,7 +4,7 @@ public class Main {
     public static void main(String[] args) {
 //		Cat cat = (Cat) new Dog();
 
-        Pet pet = new Dog("Bob");
+    	Pet pet = new Dog("Bob");
 
         // risky
         Dog dog = (Dog) pet;
