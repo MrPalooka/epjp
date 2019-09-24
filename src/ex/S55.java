@@ -9,7 +9,7 @@ public class S55 {
      * @return the sum of all the numbers, or zero
      */
     public static long sum(int first, int last) {
-        // TODO
+       int firsts= 0;
         return 0;
     }
 
