@@ -20,7 +20,7 @@ public abstract class Personaggio {
 		return name;
 	}
 
-	public int getpPV() {
+	public int getPV() {
 		return pv;
 	}
 

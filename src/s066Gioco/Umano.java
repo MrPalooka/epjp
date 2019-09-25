@@ -20,4 +20,8 @@ public class Umano extends Personaggio {
 		atk_bonus += Math.round(Math.random() * 11 + 1);
 		return atk_bonus;
 	}
+
+	public int getAtkBonus() {
+		return atk_bonus;
+	}
 }
