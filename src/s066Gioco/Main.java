@@ -16,13 +16,8 @@ public class Main {
 //		while (orco.getPV() > 0 && umano.getPV() > 0) {
 //			Random random = new Random();
 //			int whoAttacks = random.nextInt(2);
-//			System.out.println("Enter 0 or 1: ");
-//			while (!scanner.hasNextInt()) {
-//				scanner.hasNext();
-//				System.out.println("Enter 0 or 1: ");
-//			}
-//			input = scanner.nextInt();
-//			if (input != whoAttacks) {
+//			
+//			if ( whoAttacks==0) {
 //
 //				orco.getAttack(umano);
 //
@@ -44,7 +39,7 @@ public class Main {
 //				System.out.println("Human hp: " + umano.getPV());
 //
 //			}
-//		}scanner.close();
+//		}
 //
 //		if (orco.getPV() > 0) {
 //
