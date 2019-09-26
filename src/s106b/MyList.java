@@ -40,17 +40,22 @@ public class MyList {
 		}
 		return count;
 	}
-	
+
 	public int get(int getindex) {
-		int value =0;
-		int index=0;
+		int value = 0;
+		int index = 0;
 		Node cur = head;
 		while (cur != null) {
-			if(index <= getindex) {
-				
+			if (index <= getindex) {
+				value = cur.getValue();
+				cur = cur.getNext();
+				index++;
+			} else {
+				cur = cur.getNext();
+				index++;
 			}
 		}
-		return getindex;
+		return value;
 	}
 
 }
