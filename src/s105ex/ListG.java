@@ -7,6 +7,11 @@ import sun.security.util.Length;
 
 
 public class ListG {
+	
+	public static void main(String[] args) {
+		String s = "gianfranco";
+		System.out.println("Sorted char: " + getMylist(s));
+	}
 
 	public static TreeSet<Character> getMylist(String s) {
 		List<Character> list = new ArrayList<>();
@@ -17,9 +22,7 @@ public class ListG {
 		TreeSet<Character> sortedChar = new TreeSet<>(list);
 		return sortedChar;
 		
-		public static void main(String[] args) {
-			System.out.println("Sorted char:" +  achar(s));
-		}
+
 	}
 	
 }

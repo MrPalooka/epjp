@@ -3,9 +3,9 @@ package s066Gioco;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Main {
-	
-
+//public class Main {
+//	
+//
 //	public static void main(String[] arg) {
 //		int input = 0;
 //		Orco orco = new Orco("Rok'thar", "Zanne Argento", 100, 20);
