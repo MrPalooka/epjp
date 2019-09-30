@@ -212,3 +212,77 @@ from employees e join employees m
 on (e.manager_id = m.employee_id)
 order by 2;
 
+select e.last_name, e.salary, j.min_salary
+from employees e join jobs j on(e.salary between j.min_salary and j.min_salary + 100)
+where(e.job_id = j.job_id);
+
+select first_name, department_name
+from employees left outer join departments using(department_id)
+where last_name = 'Grant';
+
+select first_name, last_name, department_name
+from employees right outer join departments
+using(department_id)
+where department_id between 110 and 120;
+
+select e.last_name, d.department_name
+from employees e full outer join departments d
+on (e.department_id = d.department_id)
+where last_name = 'Grant' or d.department_id between 110 and 120;
+
+select e.first_name, d.department_name
+from employees e join departments d
+using (department_id);
+
+select e.first_name, j.job_title
+from employees e join jobs j
+using (job_id);
+
+select e.first_name, e.salary, j.min_salary, j.max_salary
+from employees e join jobs j
+using (job_id)
+where e.salary=j.min_salary or e.salary=j.max_salary;
+
+select e.first_name
+from employees e join departments d using (department_id) 
+join locations l using (location_id)
+where l.country_id = 'UK';
+
+select d.department_name,e.first_name
+from employees e join departments d
+on (d.manager_id=e.employee_id);
+
+select d.department_name, e.first_name
+from employees e right outer join departments d
+on (d.manager_id=e.employee_id);
+
+select d.department_name, e.first_name
+from employees e right outer join departments d
+on (d.manager_id=e.employee_id);
+
+select d.department_name, e.first_name
+from employees e right outer join departments d
+on (d.manager_id=e.employee_id)
+where first_name is null;
+
+select e.first_name as manager, m.first_name as employee
+from employees e join employees m
+on (m.manager_id=e.employee_id)
+order by 1;
+
+select *
+from employees
+where trunc(hire_date, 'year') = '01-GEN-2005';
+
+select last_name from employees 
+where regexp_like(last_name, '^[AE].*');
+
+select salary, 8.5 * salary /100 + salary as incremento,  8.5 * salary /100 as delta
+from employees;
+
+select first_name,last_name 
+from employees
+where regexp_like(last_name, '^[aA].') or regexp_like(first_name, '[aA].');
+
+select first_name, last_name, -trunc(MONTHS_BETWEEN(hire_date,sysdate))
+FROM employees;
