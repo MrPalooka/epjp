@@ -393,3 +393,10 @@ where department_name = 'Shipping';
 select first_name, last_name
 from employees
 where manager_id = (select employee_id from employees where first_name= 'Steven' and last_name='King');
+
+insert into regions
+VALUES(12,null);
+
+SELECT  *FROM regions;
+
+rollback;
